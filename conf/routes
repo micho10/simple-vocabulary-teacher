@@ -1,0 +1,4 @@
+# Default TODO Action. It returns a 501 "Action not implemented yet"
+GET         /test           controllers.Default.todo
+
+#GET         /test           controllers.Test.testAction
