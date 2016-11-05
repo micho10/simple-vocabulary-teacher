@@ -16,3 +16,6 @@ routesGenerator := InjectedRoutesGenerator
 
 // The default settings for the scalariform code formatting tool
 com.typesafe.sbt.SbtScalariform.scalariformSettings
+
+// Let the router know about the Path Parameters binding
+routesImport += "binders.Pathbinders._"

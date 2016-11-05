@@ -15,7 +15,8 @@ class ErrorHandler @Inject() (
     // Extends the DefaultHttpErrorHandler trait, which is the hook to error-handling customization in Play
     extends DefaultHttpErrorHandler(env, config, sourceMapper, router) {
 
-  // Overrides the onNotFound method to intercept Play's default behaviour when an error occurs during communication with the client 
+  // Overrides the onNotFound method to intercept Play's default behaviour when an error occurs during communication
+  // with the client
   override protected def onNotFound(
     request: RequestHeader, message: String): Future[Result] = {
     Future.successful {
@@ -25,4 +26,3 @@ class ErrorHandler @Inject() (
   }
 
 }
-

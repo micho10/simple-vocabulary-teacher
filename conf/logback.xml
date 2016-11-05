@@ -8,14 +8,16 @@
 	<!-- Configures the logging to standard output by creating an appender -->
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
-			<!-- Defines the pattern in which messages are logged (see the logback documentation for customizing options) -->
+			<!-- Defines the pattern in which messages are logged
+				(see the logback documentation for customizing options) -->
 			<pattern>
 				%coloredLevel - %logger - %message%n%xException
 			</pattern>
 		</encoder>
 	</appender>
 
-	<!-- Configures the level for each logger; you can add more loggers here to customize the log level of third-party libraries -->
+	<!-- Configures the level for each logger; you can add more loggers here to customize the log level of
+		third-party libraries -->
 	<logger name="play" level="INFO" />
 	<logger name="application" level="DEBUG" />
 

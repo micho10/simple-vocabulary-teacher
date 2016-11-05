@@ -1,4 +1,6 @@
 # Default TODO Action. It returns a 501 "Action not implemented yet"
-GET         /test           controllers.Default.todo
+GET     /test           controllers.Default.todo
 
-#GET         /test           controllers.Test.testAction
+#GET     /test           controllers.Test.testAction
+
+PUT     /import/word/:sourceLang/:word/:targetLang/:translation     controllers.Import.importWord(sourceLang: play.api.i18n.Lang, word, targetLang: play.api.i18n.Lang, translation)
