@@ -1,3 +1,7 @@
+/*
+ * Run the "reload" command in the sbt console after changing this file to apply the changes.
+ */
+
 // Name of the project
 name := "simple-vocabulary-teacher"
 
@@ -18,4 +22,4 @@ routesGenerator := InjectedRoutesGenerator
 com.typesafe.sbt.SbtScalariform.scalariformSettings
 
 // Let the router know about the Path Parameters binding
-routesImport += "binders.Pathbinders._"
+routesImport += "binders.PathBinders._"
