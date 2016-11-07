@@ -5,6 +5,8 @@ import javax.inject.Singleton
 import models.Vocabulary
 import play.api.i18n.Lang
 
+import scala.util.Random
+
 /**
  * Created by carlos on 07/11/16.
  */
@@ -25,6 +27,24 @@ class VocabularyService {
       allVocabulary = v :: allVocabulary
       true
     } else false
+  }
+
+  def findRandomVocabulary(sourceLanguage: Lang, targetLanguage: Lang): Option[Vocabulary] = {
+    // Randomly shuffles the subset of the vocabulary that matches the desired languages
+    Random.shuffle(allVocabulary.filter { v =>
+      v.sourceLanguage == sourceLanguage &&
+        v.targetLanguage == targetLanguage
+    }).headOption
+  }
+
+  def verify(
+    sourceLanguage: Lang,
+    word: String,
+    targetLanguage: Lang,
+    translation: String): Boolean = {
+    allVocabulary.contains(
+      Vocabulary(sourceLanguage, targetLanguage, word, translation)
+    )
   }
 
 }
