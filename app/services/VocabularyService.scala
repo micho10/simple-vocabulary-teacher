@@ -6,8 +6,8 @@ import models.Vocabulary
 import play.api.i18n.Lang
 
 /**
-  * Created by carlos on 07/11/16.
-  */
+ * Created by carlos on 07/11/16.
+ */
 // Specifies that the VocabularyService class has singleton scope, which means the same instance will be injected in all
 // classes having a dependency on it.
 @Singleton
