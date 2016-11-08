@@ -12,6 +12,7 @@ object PathBinders {
 
   // Declares the PathBindable as an implicit object so it's resolved implicitly by the router
   implicit object LangPathBindable extends PathBindable[Lang] {
+
     // Implements the bind method to read a query fragment as a type
     override def bind(key: String, value: String): // Encodes the result of a binding as Either[String, Lang],
     // which means the resulting of a binding is either an error message, or the successfully read Lang value
