@@ -1,8 +1,8 @@
 # Default TODO Action. It returns a 501 "Action not implemented yet"
 GET     /test                                                       controllers.Default.todo
 #GET     /test                                                       controllers.Test.testAction
-GET     /quiz/:sourceLang                                           controllers.Quiz.quiz(sourceLang: play.api.i18n.Lang, targetLang: play.api.i18n.Lang)
+#GET     /quiz/:sourceLang                                           controllers.Quiz.quiz(sourceLang: play.api.i18n.Lang, targetLang: play.api.i18n.Lang)
 
-POST    /quiz/:sourceLang/check/:word                               controllers.Quiz.check(sourceLang: play.api.i18n.Lang, word, targetLang: play.api.i18n.Lang, translation)
+#POST    /quiz/:sourceLang/check/:word                               controllers.Quiz.check(sourceLang: play.api.i18n.Lang, word, targetLang: play.api.i18n.Lang, translation)
 
 PUT     /import/word/:sourceLang/:word/:targetLang/:translation     controllers.Import.importWord(sourceLang: play.api.i18n.Lang, word, targetLang: play.api.i18n.Lang, translation)
