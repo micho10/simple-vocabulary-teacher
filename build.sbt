@@ -22,4 +22,7 @@ routesGenerator := InjectedRoutesGenerator
 com.typesafe.sbt.SbtScalariform.scalariformSettings
 
 // Let the router know about the Path Parameters binding
-routesImport += "binders.PathBinders._"
+routesImport ++= Seq(
+  "binders.PathBinders._",
+  "binders.QueryStringBinders._"
+)

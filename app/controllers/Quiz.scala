@@ -2,7 +2,6 @@ package controllers
 
 import javax.inject.Inject
 
-import models.Vocabulary
 import play.api.i18n.Lang
 import play.api.mvc.{ Action, Controller }
 import services.VocabularyService
@@ -44,4 +43,3 @@ class Quiz @Inject() (vocabulary: VocabularyService) extends Controller {
   }
 
 }
-
