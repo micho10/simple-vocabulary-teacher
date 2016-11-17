@@ -39,9 +39,25 @@ class Quiz @Inject() (vocabulary: VocabularyService) extends Controller {
    *         406 Not Acceptable otherwise
    */
   def check(sourceLanguage: Lang, word: String, targetLanguage: Lang, translation: String) = Action { request =>
-    val correct = vocabulary.verify(sourceLanguage, word, targetLanguage, translation)
-    if (correct) Ok
-    else NotAcceptable
+    val isCorrect =
+      vocabulary
+        .verify(sourceLanguage, word, targetLanguage, translation)
+    val correctScore =
+      // Reads the previous score from the session and converts the counts from String to Int
+      request.session.get("correct").map(_.toInt).getOrElse(0)
+    val wrongScore =
+      request.session.get("wrong").map(_.toInt).getOrElse(0)
+    if (isCorrect)
+      // Sets a  new session with an adjusted score
+      Ok.withSession(
+        "correct" -> (correctScore + 1).toString,
+        "wrong" -> wrongScore.toString
+      )
+    else
+      NotAcceptable.withSession(
+        "correct" -> correctScore.toString,
+        "wrong" -> (wrongScore + 1).toString
+      )
   }
 
   // Languages are provided as parameters to the handler method

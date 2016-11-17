@@ -1,8 +1,7 @@
 package filters
 
 import play.api.libs.iteratee.Enumerator
-import play.api.mvc.{ Filter, Result }
-import play.mvc.Http.RequestHeader
+import play.api.mvc.{ Filter, RequestHeader, Result }
 
 import scala.concurrent.Future
 

@@ -12,8 +12,7 @@ version := "1.0"
 scalaVersion := "2.11.7"
 
 // The configuration of the main project
-lazy val `simple-vocabulary-teacher` = 
-  (project in file(".")).enablePlugins(PlayScala)
+lazy val `simple-vocabulary-teacher` = (project in file(".")).enablePlugins(PlayScala)
 
 // Uses dependency injection in the Play router
 routesGenerator := InjectedRoutesGenerator
