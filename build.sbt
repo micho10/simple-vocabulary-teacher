@@ -26,3 +26,6 @@ routesImport ++= Seq(
   "binders.PathBinders._",
   "binders.QueryStringBinders._"
 )
+
+// Enable filters
+libraryDependencies += filters
